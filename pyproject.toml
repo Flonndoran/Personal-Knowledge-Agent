@@ -1,0 +1,78 @@
+[project]
+name = "personal-knowledge-agent"
+version = "0.1.0"
+description = "Personal Knowledge Manager with MCP"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/personal-knowledge-agent"
+Repository = "https://github.com/yourusername/personal-knowledge-agent"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "isort>=5.12",
+    "mypy>=1.0",
+    "flake8>=6.0",
+    "pre-commit>=3.0",
+    "jupyter>=1.0",
+]
+
+mcp = [
+    "mcp[cli]>=1.0",
+    "fastapi>=0.104",
+    "uvicorn[standard]>=0.24",
+]
+
+rag = [
+    "sentence-transformers>=2.2",
+    "qdrant-client>=1.6",
+    "chromadb>=0.4.0",  # Альтернатива Qdrant
+]
+
+parsers = [
+    "pymupdf>=1.23",
+    "python-pptx>=0.6",
+    "beautifulsoup4>=4.12",
+    "markdown>=3.5",
+    "pypdf2>=3.0",
+]
+
+ui = [
+    "streamlit>=1.28",
+    "rich>=13.0",
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+pka = "src.cli.main:app"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true

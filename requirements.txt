@@ -1,0 +1,18 @@
+# Базовые зависимости
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+typer>=0.9.0
+rich>=13.0.0
+
+# MCP
+mcp[cli]>=1.0.0
+
+# Для разработки
+pytest>=7.0.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.0.0
+flake8>=6.0.0
